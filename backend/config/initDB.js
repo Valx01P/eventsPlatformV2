@@ -13,16 +13,13 @@ const initDB = async () => {
     }
 }
 
-
-
 const createLocationTableQuery = `
 CREATE TABLE IF NOT EXISTS locations (
     location_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     city VARCHAR(100) NOT NULL,
     state VARCHAR(100) NOT NULL,
-    image_name VARCHAR(100) NOT NULL,
-    image_url TEXT NOT NULL
+    image_name VARCHAR(100) NOT NULL
 );`
 
 const createEventTableQuery = `
@@ -32,9 +29,10 @@ CREATE TABLE IF NOT EXISTS events (
     FOREIGN KEY (location_id) REFERENCES locations(location_id) ON DELETE CASCADE,
     name VARCHAR(100) NOT NULL,
     description TEXT NOT NULL,
-    image_name VARCHAR(100) NOT NULL,
-    image_url TEXT NOT NULL
+    image_name VARCHAR(100) NOT NULL
 );`
+
+initDB()
 
 
 // const createImageTableQuery = `
@@ -84,4 +82,3 @@ CREATE TABLE IF NOT EXISTS events (
 //     FOREIGN KEY (image_id) REFERENCES images(image_id) ON DELETE CASCADE
 // );`
 
-initDB()

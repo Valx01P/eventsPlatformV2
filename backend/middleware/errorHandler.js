@@ -1,6 +1,4 @@
 // backend/middleware/errorHandler.js
-// backend/middleware/errorHandler.js
-// backend/middleware/errorHandler.js
 import multer from 'multer'
 
 const errorHandler = (error, req, res, next) => {
